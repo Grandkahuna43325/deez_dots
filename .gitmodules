@@ -3,5 +3,5 @@
 	url = https://github.com/Grandkahuna43325/Awesome_config
 [submodule "nvim"]
 	path = nvim
-	url = https://github.com/Grandkahuna43325
+	url = https://github.com/Grandkahuna43325/Neovim_config
 	branch = rewrite
