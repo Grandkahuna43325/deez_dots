@@ -1,3 +1,7 @@
 [submodule "awesome"]
 	path = awesome
 	url = https://github.com/Grandkahuna43325/Awesome_config
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/Grandkahuna43325
+	branch = rewrite
