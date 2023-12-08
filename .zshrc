@@ -183,4 +183,6 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/mysql-client/bin:$PATH"
 # [[! -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 source ~/.p10k.zsh
 source ~/.env
-tmux
+if [ -z "$TMUX" ]; then
+    tmux 
+fi
