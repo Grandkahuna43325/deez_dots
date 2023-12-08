@@ -174,7 +174,6 @@ alias cat="bat"
 
 eval $(thefuck --alias)
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -183,6 +182,8 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/mysql-client/bin:$PATH"
 # [[! -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 source ~/.p10k.zsh
 source ~/.env
-if [ -z "$TMUX" ]; then
-    tmux 
+if command -v tmux>/dev/null; then
+        if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
+                [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
+        fi
 fi
