@@ -183,7 +183,7 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/mysql-client/bin:$PATH"
 source ~/.p10k.zsh
 source ~/.env
 if command -v tmux>/dev/null; then
-        if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
+        # if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
                 [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
-        fi
+        # fi
 fi
