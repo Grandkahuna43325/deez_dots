@@ -164,7 +164,13 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias q="exit"
 
-alias e="fzf | xargs nvim"
+
+find_edit_file() {
+nvim $(find . -not -path "*/target/*" -not -path "*/dist/*" | fzf)
+}
+
+alias e="find_edit_file"
+
 
 alias .=".."
 
