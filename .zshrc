@@ -166,7 +166,7 @@ alias q="exit"
 
 
 find_edit_file() {
-nvim $(find . -not -path "*/target/*" -not -path "*/dist/*" | fzf)
+	nvim $(find . -not -path "*/target/*" -not -path "*/dist/*" | fzf)
 }
 
 alias e="find_edit_file"
@@ -188,8 +188,8 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/mysql-client/bin:$PATH"
 # [[! -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 source ~/.p10k.zsh
 source ~/.env
-if command -v tmux>/dev/null; then
-        # if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
-                [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
-        # fi
-fi
+# if command -v tmux>/dev/null; then
+#         # if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
+#                 [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
+#         # fi
+# fi
