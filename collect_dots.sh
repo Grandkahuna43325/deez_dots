@@ -9,6 +9,9 @@ read -p "
 4. awesome
 5. rofi
 6. nvim
+7. i3
+8. polybar
+9. picom
 "
 
 for i in $REPLY
@@ -39,6 +42,18 @@ do
 			rm -fr ./nvim
 			cp -r ~/.config/nvim  .
 			;;
+		7) echo 7 i3
+			rm -fr ./i3
+			cp -r ~/.config/i3  .
+			;;
+    8) echo 8 polybar
+      rm -fr ./polybar
+      cp -r ~/.config/polybar  .
+      ;;
+    9) echo 9 picom
+      rm -fr ./picom
+      cp -r ~/.config/picom  .
+      ;;
 
 		esac
 	done

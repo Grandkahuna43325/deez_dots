@@ -4,3 +4,16 @@ configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
 }
+
+@theme "gruvbox-dark"
+
+* {
+  accent:           #83a598;
+  background:       #141414;
+  foreground:       #FFFFFF;
+  on:               #44ad4d;
+  off:              #fb4934;
+  background-color:      Black;
+  text-color:            White;
+  border-color:          Black;
+}
