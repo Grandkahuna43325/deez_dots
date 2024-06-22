@@ -12,6 +12,7 @@ read -p "
 7. i3
 8. polybar
 9. picom
+10. zellij
 "
 
 for i in $REPLY
@@ -53,6 +54,10 @@ do
     9) echo 9 picom
       rm -fr ./picom
       cp -r ~/.config/picom  .
+      ;;
+    10) echo 10 zellij
+      rm -fr ./zellij
+      cp -r ~/.config/zellij  .
       ;;
 
 		esac
