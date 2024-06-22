@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/grandkahuna43325/.local/bin
+ export PATH=$HOME/bin:/usr/local/bin:/home/grandkahuna43325/.local/share/bob/nvim-bin:$PATH:/home/grandkahuna43325/.local/bin:$HOME/temp/google-cloud-sdk/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -158,7 +158,7 @@ cc() {
 
 alias cf="cc"
 
-alias ll="exa"
+alias ll="exa --all --long -I '.*'"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -177,6 +177,8 @@ alias .=".."
 alias gp="git pull"
 
 alias cat="bat"
+
+alias vmware="sudo /etc/init.d/vmware start && vmware"
 
 eval $(thefuck --alias)
 
