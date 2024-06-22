@@ -13,6 +13,7 @@ read -p "
 8. polybar
 9. picom
 10. zellij
+11. autostart
 "
 
 for i in $REPLY
@@ -58,6 +59,10 @@ do
     10) echo 10 zellij
       rm -fr ./zellij
       cp -r ~/.config/zellij  .
+      ;;
+    11) echo 11 autostart
+      rm -fr .autostart
+      cp -r ~/.autostart .
       ;;
 
 		esac

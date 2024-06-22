@@ -13,7 +13,8 @@ read -p "
 8. polybar
 9. picom
 10. zellij
-11. zsh stuff
+11. autostart
+12. zsh stuff
 "
 
 for i in $REPLY
@@ -60,7 +61,11 @@ do
       rm -fr ~/.config/zellij
       cp -r ./zellij ~/.config/
       ;;
-    11) echo zsh plugins 
+    11) echo autostart
+      rm -fr ~/.autostart
+      cp -r ./.autostart ~
+      ;;
+    12) echo zsh plugins 
       git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
       git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
       ;;
