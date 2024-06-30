@@ -1,5 +1,6 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
+  unbind "Ctrl g"
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
@@ -49,8 +50,8 @@ keybinds {
     tab {
         bind "Ctrl t" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "h" "Left" "Up" "k" { GoToPreviousTab; }
-        bind "l" "Right" "Down" "j" { GoToNextTab; }
+        bind "h" "Left" "Up" "k" { GoToNextTab; }
+        bind "l" "Right" "Down" "j" { GoToPreviousTab; }
         bind "n" { NewTab; SwitchToMode "Normal"; }
         bind "x" { CloseTab; SwitchToMode "Normal"; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
@@ -197,6 +198,7 @@ plugins {
     filepicker location="zellij:strider" {
         cwd "/"
     }
+    layout_dir "~/.config/zellij/layouts/"
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -262,16 +264,16 @@ plugins {
 //
 themes {
   original {
-      fg "#333333"
+      fg "#000000"
       bg "#000000"
-      red "#000000"
-      green "#134d3e"
+      red "#1a1a1a"
+      green "#4d3333"
       yellow "#F1FA8C"
       blue "#6272A4"
       magenta "#FF79C6"
       orange "#FFB86C"
       cyan "#8BE9FD"
-      black "#000000"
+      black "#333333"
       white "#333333"
   }
 }
@@ -284,7 +286,7 @@ theme "original"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -347,6 +349,7 @@ theme "original"
 // The folder in which Zellij will look for layouts
 //
 // layout_dir "/path/to/my/layout_dir"
+// layout_dir "~/.config/zellij/layouts"
 
 // The folder in which Zellij will look for themes
 //
@@ -363,3 +366,4 @@ theme "original"
 // Default: false
 //
 // disable_session_metadata true
+

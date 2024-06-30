@@ -24,7 +24,7 @@ floating_modifier $mod
 gaps inner 10px
 
 # Start a terminal
-bindsym $mod+x exec terminator
+bindsym $mod+x exec alacritty
 
 # Kill focused window
 bindsym $mod+q kill
@@ -120,7 +120,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # Always open some programs on specified workspace
 # assign [class="^Firefox"]          $workspace1
-assign [class="^terminator"]            $workspace2
+assign [class="alacritty"]            $workspace2
 # assign [class="^Gimp"]             $workspace4
 # assign [class="^Nautilus"]         $workspace4
 # assign [class="^Slack"]            $workspace7
@@ -160,10 +160,10 @@ bindsym $mod+Shift+r exec shutdown now
 mode "resize"
 {
     # Resize with the arrow keys
-    bindsym Left  resize shrink width  1 px or 1 ppt
-    bindsym Down  resize grow   height 1 px or 1 ppt
-    bindsym Up    resize shrink height 1 px or 1 ppt
-    bindsym Right resize grow   width  1 px or 1 ppt
+    bindsym h  resize shrink width  1 px or 1 ppt
+    bindsym j  resize grow   height 1 px or 1 ppt
+    bindsym k    resize shrink height 1 px or 1 ppt
+    bindsym l resize grow   width  1 px or 1 ppt
 
     # Back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -229,6 +229,7 @@ client.background       #000000
 # exec_always --no-startup-id ~/.scripts/monitors.sh
 # exec_always --no-startup-id ~/.scripts/wallpapers.sh
 exec --no-startup-id betterlockscreen -w dim
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id ./autostart.sh
+exec_always --no-startup-id ~/.autostart/polybar.sh
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
