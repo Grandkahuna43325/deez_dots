@@ -164,9 +164,50 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias q="exit"
 
+adjust_brightness() {
+    if [ -z "$1" ]; then
+        echo "Usage: adjust_brightness <brightness>"
+        return 1
+    fi
+
+    BRIGHTNESS=$1
+
+    for output in $(xrandr --listmonitors | grep '^[ ]*[0-9]:' | awk '{print $4}')
+    do
+        xrandr --output $output --brightness $BRIGHTNESS
+    done
+}
+
+blackscreen() {
+    output=HDMI-A-1
+
+    xrandr --output $output --brightness 0
+}
+unblackscreen() {
+
+    BRIGHTNESS=$1
+    output=HDMI-A-1
+
+    xrandr --output $output --brightness 0.8
+}
+
+alias brightness=adjust_brightness
+alias black=blackscreen
+alias unblack=unblackscreen
 
 find_edit_file() {
-	nvim $(find . -not -path "*/target/*" -not -path "*/dist/*" | fzf)
+  base_dir="${1:-.}"
+  
+  # Find directories excluding target and dist, then use fzf to select one
+  dir=$(find "$base_dir" -type d -not -path "*/target/*" -not -path "*/dist/*" | fzf)
+  
+  # If a directory is selected, change to that directory and open nvim
+  if [ -n "$dir" ]; then
+    cd "$dir" && nvim
+  else
+    echo "No directory selected"
+  fi
+	# nvim $(find . -not -path "*/target/*" -not -path "*/dist/*" | fzf)
 }
 
 alias e="find_edit_file"
@@ -178,7 +219,7 @@ alias gp="git pull"
 
 alias cat="bat"
 
-alias vmware="sudo /etc/init.d/vmware start && vmware"
+# alias vmware="sudo /etc/init.d/vmware start && vmware"
 
 eval $(thefuck --alias)
 
