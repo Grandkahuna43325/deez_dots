@@ -9,8 +9,8 @@
 
 # Default modkey
 set $mod Mod4
-set $sm HDMI-0
-set $fm DP-2
+# set $sm HDMI-0
+# set $fm DP-2
 
 # Hide titlebar
 new_window pixel
@@ -24,7 +24,7 @@ floating_modifier $mod
 gaps inner 10px
 
 # Start a terminal
-bindsym $mod+x exec alacritty
+bindsym $mod+x exec terminator
 
 # Kill focused window
 bindsym $mod+q kill
@@ -135,15 +135,15 @@ assign [class="alacritty"]            $workspace2
 # for_window [class="^Arandr$"]       floating enable
 
 # Always open workspaces in certain outputs
-workspace "1:  " output $fm
-workspace "2:  " output $fm
-workspace "3:  " output $fm
-workspace "4:  " output $fm
-workspace "5:  " output $sm
-workspace "7:  " output $sm
-workspace "8: ♫ " output $sm
-workspace "9:  " output $sm
-workspace "10:  " output $sm
+# workspace "1:  " output $fm
+# workspace "2:  " output $fm
+# workspace "3:  " output $fm
+# workspace "4:  " output $fm
+# workspace "5:  " output $sm
+# workspace "7:  " output $sm
+# workspace "8: ♫ " output $sm
+# workspace "9:  " output $sm
+# workspace "10:  " output $sm
 
 
 
